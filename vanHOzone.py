@@ -13,7 +13,9 @@ def get_ozone_conc(lat, lon, timestamp):
     ozone for solar radiation models. Solar Energy, 22(1), 63-68.
 
     This function uses numpy functions, so you can pass arrays and it will
-    return an array of results.
+    return an array of results. The timestamp argument can be either an
+    array/list or a single value. If it is a single value then this will be
+    used for all lat/lon values given.
     """
     # Set the Day of Year
 
