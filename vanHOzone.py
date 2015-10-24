@@ -1,6 +1,5 @@
 import numpy as np
 from dateutil.parser import parse
-import math
 
 
 def get_ozone_conc(lat, lon, timestamp):
@@ -14,8 +13,7 @@ def get_ozone_conc(lat, lon, timestamp):
     ozone for solar radiation models. Solar Energy, 22(1), 63-68.
 
     This function uses numpy functions, so you can pass arrays and it will
-    return an array of results. Note: This does not yet support running for
-    multiple dates, so you must only pass a single string for the date.
+    return an array of results.
     """
     # Set the Day of Year
 
