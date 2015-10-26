@@ -38,8 +38,26 @@ def get_ozone_conc(lat, lon, timestamp):
     array/list or a single value. If it is a single value then this will be
     used for all lat/lon values given.
     """
-    # Set the Day of Year
+    # Deal with scalar values
+    try:
+        lat_count = len(lat)
+    except:
+        lat = [lat]
+        lat_count = 1
 
+    try:
+        lon_count = len(lon)
+    except:
+        lon = [lon]
+        lon_count = 1
+
+    if lat_count != lon_count:
+        raise ValueError("lan and lon arrays must be the same length")
+
+    lat = np.array(lat)
+    lon = np.array(lon)
+
+    # Set the Day of Year
     try:
         # Try and do list-based things with it
         # If it works then it is a list, so check length is correct
