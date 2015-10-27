@@ -1,0 +1,65 @@
+package:
+  name: vanhozone
+  version: "1.0.0"
+
+source:
+  fn: vanHOzone-1.0.0.tar.gz
+  url: https://pypi.python.org/packages/source/v/vanHOzone/vanHOzone-1.0.0.tar.gz
+  md5: 8960c7b46fdbb9923963c5efc43a220f
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - vanhozone = vanhozone:main
+    #
+    # Would create an entry point called vanhozone that calls vanhozone.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - numpy
+    - python-dateutil
+
+  run:
+    - python
+    - numpy
+    - python-dateutil
+
+test:
+  # Python imports
+  imports:
+    - vanHOzone
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://pypi.python.org/pypi/vanHOzone
+  license: MIT License
+  summary: 'An implementation of the van Heuklon (1979) Ozone model, for estimating atmospheric ozone concentration given a latitude, longitude and datetime.'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
